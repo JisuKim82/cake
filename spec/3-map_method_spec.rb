@@ -10,4 +10,10 @@ describe '#my_map' do
       expect([1,2,3].my_map{|x| x-1}).to eq [0,1,2]
     end
   end
+
+  context 'when no block given' do
+    it 'returns an enumerator' do
+      expect([1,2,3].my_map.class).to eq Enumerator 
+    end
+  end  
 end
